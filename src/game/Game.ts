@@ -2,6 +2,7 @@ import * as THREE from '../../lib/three.js/three.module.js';
 import Entity from '../Entity.js';
 import CameraController from "../camera/CameraController.js";
 import SpinnyCube from '../entities/SpinnyCube.js';
+import KeyboardController from '../input/KeyboardController.js';
 
 class Game {
   scene: THREE.Scene;
@@ -9,11 +10,14 @@ class Game {
   entities: Entity[];
   renderer: THREE.WebGLRenderer;
 
+  input: {keyboard?: KeyboardController} = {};
+
   cube!: THREE.Mesh;
 
   constructor() {
     this.entities = [];
     this.scene = new THREE.Scene();
+    this.input.keyboard = new KeyboardController();
     this.camera = this.initializeCamera();
     this.initializeStuffInScene();
 
