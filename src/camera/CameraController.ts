@@ -1,23 +1,20 @@
-import { Camera } from 'lib/three.js/three.module';
+import Game from '../game/Game.js';
+import Entity from '../Entity.js';
 import KeyboardController from '../input/KeyboardController.js';
 
-class CameraController {
+class CameraController extends Entity {
   camera: THREE.Camera;
   keyboardController: KeyboardController;
-  constructor(camera: THREE.Camera) {
+  constructor(game: Game, camera: THREE.Camera) {
+    super(game);
     this.camera = camera;
     this.keyboardController = new KeyboardController();
-    this.setupControls();
   }
 
   tick() {
     const { ArrowUp, ArrowDown, ArrowLeft, ArrowRight } = this.keyboardController.keysPressed;
     this.camera.translateY(ArrowUp ? .05 : ArrowDown ? -.05 : 0);
     this.camera.translateX(ArrowRight ? .05 : ArrowLeft ? -.05 : 0);
-  }
-
-  setupControls(): void {
-    //window.addEventListener("key")
   }
 }
 

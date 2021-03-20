@@ -1,7 +1,8 @@
 class KeyboardController {
   keysPressed: {[key in string]: boolean} = {};
   constructor() {
-    window.addEventListener("keydown", this.keyDown);
+    window.addEventListener("keydown", this.keyDown.bind(this));
+    window.addEventListener("keyup", this.keyUp.bind(this));
   }
 
   keyDown(event: KeyboardEvent) {
