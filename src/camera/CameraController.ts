@@ -1,8 +1,8 @@
-import Game from '../game/Game.js';
-import Entity from '../Entity.js';
+import Game from '../Game.js';
+import GameObject from '../GameObject.js';
 import KeyboardController from '../input/KeyboardController.js';
 
-class CameraController extends Entity {
+class CameraController extends GameObject {
   camera: THREE.Camera;
   keyboardController: KeyboardController;
   constructor(game: Game, camera: THREE.Camera) {

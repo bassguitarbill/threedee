@@ -1,14 +1,13 @@
 import * as THREE from '../../lib/three.js/three.module.js';
-import Game from "../game/Game.js";
-import CubeGeometry from "../components/CubeGeometry.js";
-import Entity from '../Entity.js';
+import Game from "../Game.js";
+import GameObject from '../GameObject.js';
 
-class SpinnyCube extends Entity {
+class SpinnyCube extends GameObject {
   readonly geometry: THREE.Mesh;
   constructor(readonly game: Game) {
     super(game);
     this.geometry = constructCube();
-    this.game.entities.push(this);
+    this.game.gameObjects.push(this);
     this.game.scene.add(this.geometry);
   }
 

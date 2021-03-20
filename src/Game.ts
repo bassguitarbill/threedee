@@ -1,13 +1,13 @@
-import * as THREE from '../../lib/three.js/three.module.js';
-import Entity from '../Entity.js';
-import CameraController from "../camera/CameraController.js";
-import SpinnyCube from '../entities/SpinnyCube.js';
-import KeyboardController from '../input/KeyboardController.js';
+import * as THREE from '../lib/three.js/three.module.js';
+import GameObject from './GameObject.js';
+import CameraController from "./camera/CameraController.js";
+import SpinnyCube from './entities/SpinnyCube.js';
+import KeyboardController from './input/KeyboardController.js';
 
 class Game {
   scene: THREE.Scene;
   camera: THREE.Camera;
-  entities: Entity[];
+  gameObjects: GameObject[];
   renderer: THREE.WebGLRenderer;
 
   input: {keyboard?: KeyboardController} = {};
@@ -15,7 +15,7 @@ class Game {
   cube!: THREE.Mesh;
 
   constructor() {
-    this.entities = [];
+    this.gameObjects = [];
     this.scene = new THREE.Scene();
     this.input.keyboard = new KeyboardController();
     this.camera = this.initializeCamera();
@@ -50,7 +50,7 @@ class Game {
 
   startGameLoop(dt: number = 0) {
     this.renderer.render( this.scene, this.camera );
-    this.entities.forEach(e => e.tick(dt));
+    this.gameObjects.forEach(e => e.tick(dt));
     /*this.cube.rotateX(.01);
     this.cube.rotateY(.01);*/
     requestAnimationFrame( this.startGameLoop );
