@@ -12,6 +12,7 @@ class SpinnyCube extends GameObject {
   }
 
   tick(dt: number) {
+    return;
     const kc = this.game.input.keyboard!;
     if (kc.isKeyPressed('KeyA')) {
       this.geometry.rotateY(.000005 * dt);
