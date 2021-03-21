@@ -12,7 +12,7 @@ class GameObject {
     console.log(`${this.name} created`);
   }
 
-  tick(dt: number) {}
+  tick(_: number) {}
 }
 
 export default GameObject;

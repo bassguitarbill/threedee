@@ -1,7 +1,7 @@
 import * as THREE from '../lib/three.js/three.module.js';
 import GameObject from './GameObject.js';
 import CameraController from "./camera/CameraController.js";
-import SpinnyCube from './entities/SpinnyCube.js';
+import SpinnyCube from './gameObjects/SpinnyCube.js';
 import KeyboardController from './input/KeyboardController.js';
 
 class Game {
