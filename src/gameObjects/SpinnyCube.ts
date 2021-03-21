@@ -13,20 +13,20 @@ class SpinnyCube extends GameObject {
 
   tick(dt: number) {
     const kc = this.game.input.keyboard!;
-    if (kc.isKeyPressed('ArrowRight')) {
-      this.geometry.rotateY(3 * dt);
-    } else if (kc.isKeyPressed('ArrowLeft')) {
-      this.geometry.rotateY(-3 * dt);
+    if (kc.isKeyPressed('KeyA')) {
+      this.geometry.rotateY(.000005 * dt);
+    } else if (kc.isKeyPressed('KeyD')) {
+      this.geometry.rotateY(-.000005 * dt);
     }
-    if (kc.isKeyPressed('ArrowUp')) {
-      this.geometry.rotateZ(3 * dt);
-    } else if (kc.isKeyPressed('ArrowDown')) {
-      this.geometry.rotateZ(-3 * dt);
+    if (kc.isKeyPressed('KeyW')) {
+      this.geometry.rotateZ(.000005 * dt);
+    } else if (kc.isKeyPressed('KeyS')) {
+      this.geometry.rotateZ(-.000005 * dt);
     }
     if (kc.isKeyPressed('KeyQ')) {
-      this.geometry.rotateX(3 * dt);
+      this.geometry.rotateX(.000005 * dt);
     } else if (kc.isKeyPressed('KeyE')) {
-      this.geometry.rotateX(-3 * dt);
+      this.geometry.rotateX(-.000005 * dt);
     }
   }
 }

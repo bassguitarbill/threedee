@@ -3,6 +3,7 @@ import GameObject from './GameObject.js';
 import CameraController from "./camera/CameraController.js";
 import SpinnyCube from './gameObjects/SpinnyCube.js';
 import KeyboardController from './input/KeyboardController.js';
+import SkyboxTexture from './skybox/SkyboxTexture.js';
 
 class Game {
   scene: THREE.Scene;
@@ -36,6 +37,8 @@ class Game {
     const light = new THREE.PointLight( 0xffffff , 10, 100 );
     light.position.set( 15, 15, 15 ); 
     this.scene.add( light );
+
+    this.scene.background = new SkyboxTexture('/static/skybox/miramar/').texture;
   }
 
   initializeCamera(): THREE.Camera {
