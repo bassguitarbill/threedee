@@ -1,7 +1,7 @@
 import * as THREE from '../../lib/three.js/three.module.js';
 
 const CUBE_FACE_PATHS = [
-  'up.jpg', 'dn.jpg', 'lf.jpg', 'rt.jpg', 'ft.jpg', 'bk.jpg',
+  'ft.jpg', 'bk.jpg','up.jpg', 'dn.jpg', 'rt.jpg', 'lf.jpg',
 ];
 
 class SkyboxTexture {

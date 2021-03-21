@@ -13,8 +13,8 @@ class CameraController extends GameObject {
 
   tick() {
     const { ArrowUp, ArrowDown, ArrowLeft, ArrowRight } = this.keyboardController.keysPressed;
-    this.camera.translateY(ArrowUp ? .05 : ArrowDown ? -.05 : 0);
-    this.camera.translateX(ArrowRight ? .05 : ArrowLeft ? -.05 : 0);
+    this.camera.rotateX(ArrowUp ? .05 : ArrowDown ? -.05 : 0);
+    this.camera.rotateY(ArrowLeft ? .05 : ArrowRight ? -.05 : 0);
   }
 }
 
